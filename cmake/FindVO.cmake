@@ -1,0 +1,21 @@
+FIND_PATH(VO_INCLUDE_DIR visual_odometry.h PATHS /home/pgp/slam-again/ch13/install/include/myslam)
+FIND_LIBRARY(VO_LIBRARY myslam PATHS /home/pgp/slam-again/ch13/install/lib)
+
+MESSAGE(${VO_INCLUDE_DIR})
+MESSAGE(${VO_LIBRARY})
+
+IF(VO_INCLUDE_DIR AND VO_LIBRARY)
+	SET(VO_FOUND TRUE)
+ENDIF()
+
+
+IF(VO_FOUND)
+	IF(NOT VO_QUIETLY)
+		MESSAGE(STATUS "Found VO: " ${VO_LIBRARY})
+	ENDIF()
+ELSE()
+	IF(VO_FIND_REQUIRED)
+		MESSAGE(FATAL_ERROR "ERROR can't find VO")
+	ENDIF()
+ENDIF()
+
