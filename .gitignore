@@ -1,7 +1,7 @@
 test
 dataset
 .idea
-.CMakeLists.txt.swp
+bin
 cmake-build-debug
 build
 install
